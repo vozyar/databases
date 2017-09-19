@@ -6,20 +6,13 @@ var mysql = require('mysql');
 
 var connection = mysql.createConnection({
   database: 'chat',
-  host: 'localhost',
-  password: '',
+  // host: 'localhost',
+  password: 'plantlife',
   user: 'root'
 });
 
-connection.connect(function(err) {
-  if (err) {
-    throw err;
-  }
-  console.log("Connected!");
-});
+connection.connect();
 
-module.exports = {
-  connection: connection
-};
+module.exports = connection;
 
 

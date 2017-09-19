@@ -27,7 +27,6 @@ CREATE TABLE `Messages` (
   `id` INTEGER AUTO_INCREMENT,
   `text` VARCHAR(150),
   `user` INTEGER,
-  `postdate` DATETIME,
   `roomname` VARCHAR(20),
   PRIMARY KEY (`id`)
   -- FOREIGN KEY (`user`) REFERENCES `Users` (`id`)
@@ -41,17 +40,16 @@ CREATE TABLE `Messages` (
 DROP TABLE IF EXISTS `Users`;
     
 CREATE TABLE `Users` (
-  `id` INTEGER AUTO_INCREMENT,
+  `userid` INTEGER AUTO_INCREMENT,
   `name` VARCHAR(30),
-  `age` INTEGER,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`userid`)
 );
 
 -- ---
 -- Foreign Keys 
 -- ---
 
-ALTER TABLE `Messages` ADD FOREIGN KEY (user) REFERENCES `Users` (`id`);
+ALTER TABLE `Messages` ADD FOREIGN KEY (user) REFERENCES `Users` (`userid`);
 
 -- ---
 -- Table Properties
