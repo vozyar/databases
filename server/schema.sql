@@ -25,10 +25,10 @@ DROP TABLE IF EXISTS `Messages`;
     
 CREATE TABLE `Messages` (
   `id` INTEGER AUTO_INCREMENT,
-  `body` VARCHAR(150),
+  `text` VARCHAR(150),
   `user` INTEGER,
   `postdate` DATETIME,
-  `room` VARCHAR(20),
+  `roomname` VARCHAR(20),
   PRIMARY KEY (`id`)
   -- FOREIGN KEY (`user`) REFERENCES `Users` (`id`)
 );
